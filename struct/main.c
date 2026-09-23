@@ -29,6 +29,24 @@ float mediaTurma(Aluno *aluno,int quantAluno){
 	return mediaturma / quantAluno;
 }
 
+void excluirRA(Aluno *aluno, int *quantAluno){
+	int RA, posicao=-1;
+	printf("Digite o RA do aluno que deseja excluir: ");
+	scanf("%d", &RA);
+	for(int i=0;i<*quantAluno;i++){
+		if(aluno[i].ra == RA){
+			posicao = i;
+			break;
+		}
+	}
+	if (posicao != -1) {
+        for (int i = posicao; i < *quantAluno - 1; i++) {
+            aluno[i] = aluno[i + 1];
+        }
+        (*quantAluno)--;
+    }	
+}
+
 void vizualizacaoDeAluno(Aluno aluno){
 	printf("\nDados do aluno: \n");
     printf("RA: %d\n", aluno.ra);
@@ -144,7 +162,7 @@ int menu(void){
 
         	case 3:
             	system("cls");
-            	buscaRA(&aluno,quantAluno);
+            	buscaRA(aluno,quantAluno);
             	break;
 
         	case 4:
@@ -155,11 +173,12 @@ int menu(void){
 
         	case 5:
             	system("cls");
-            	printf("Media da turma: %.2f",mediaTurma(&aluno,quantAluno));
+            	printf("Media da turma: %.2f",mediaTurma(aluno,quantAluno));
             	break;
 
         	case 6:
             	system("cls");
+            	excluirRA(&aluno,&quantAluno);
             	break;
 
         	case 7:
