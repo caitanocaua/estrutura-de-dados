@@ -2,26 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-/*void listarAluno(Aluno *aluno, int quantAluno){	
-	for(int i = 0; i < quantAluno; i++){
-        printf("\nDados do aluno %d:\n", i + 1);
-        printf("RA: %d\n", aluno[i].ra);
-        printf("Nome: %s\n", aluno[i].nome);
-        printf("Curso: %s\n", aluno[i].curso);                
-		for(int b=0;b<4;b++){
-			printf("Nota %d: %.2f\n", b + 1, aluno[i].notas[b]);
-		}
-		printf("Media: %.2f\n", media(aluno[i]));                                           
-		printf("Ano de inicio: %d \n", aluno[i].anoInicio);
-		printf("Idade: %d\n", aluno[i].idade);
-	}
-}*/
-
-/*
-Uma função que cria um novo aluno, leia os seus dados e
-retorne o novo aluno;
-*/
-
 typedef struct{
 		int ra;
 		char nome[50];
